@@ -33,7 +33,10 @@ return require('packer').startup(function(use)
 	    {'rafamadriz/friendly-snippets'},
 	  }
       }
-  --- Fmts
-  --- use {"rust-lang/rust.vim"}
+  --- Rust support for vim
+  use {"rust-lang/rust.vim"}
+
+  --- Group comment
+  use "tpope/vim-commentary"
   
   end)
