@@ -24,21 +24,21 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
-local opt = {silent = true, noremap = true}
+local opt = {silent = false, noremap = true}
 
-
-vim.keymap.set("n", "<leader>pv", "<cmd>Ex<CR>",opt)
+-- Shortcut for Netrw
+vim.keymap.set("n", "<leader>pv", "<cmd>Ex<CR>",{silent = true, noremap = true})
 
 -- Alternative to Alt-Up and Alt-Down in vscode
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv",opt)
-vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv",opt)
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv",{silent = true, noremap = true})
+vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv",{silent = true, noremap = true})
 
--- Fast search and replace for all occurences
-vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>",opt)
 -- Fast search
 vim.keymap.set("n", ";s", "/",opt)
--- Fast save
-vim.keymap.set("n", ";w", ":w<CR>",opt)
+-- Fast save,quit and force quit
+vim.keymap.set("n", ";w", ":w<CR>",{silent = true, noremap = true})
+vim.keymap.set("n", ";q", ":wq<CR>",{silent = true, noremap = true})
+vim.keymap.set("n", ";Q", ":q!<CR>",{silent = true, noremap = true})
 
 -- Remap CTRL-c to <esc>
 vim.keymap.set({"n","i","v","o"}, "<C-c>","<esc>",opt)
@@ -48,9 +48,3 @@ vim.keymap.set("i","<C-h>","<Left>",opt)
 vim.keymap.set("i","<C-j>","<Down>",opt)
 vim.keymap.set("i","<C-k>","<Up>",opt)
 vim.keymap.set("i","<C-l>","<Right>",opt)
-
--- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
