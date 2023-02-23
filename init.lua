@@ -1,4 +1,4 @@
-require("remap")
 require("set")
+require("remap")
 require("plugins")
 
