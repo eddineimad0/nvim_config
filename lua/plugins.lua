@@ -22,6 +22,12 @@ require('packer').startup(function(use)
       'j-hui/fidget.nvim',
     },
   }
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+  }
 
   use { -- Autocompletion
     'hrsh7th/nvim-cmp',

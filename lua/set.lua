@@ -30,6 +30,10 @@ vim.g.gruvbox_contrast_dark="medium"
 vim.g.gruvbox_contrast_light="hard"
 vim.cmd [[colorscheme gruvbox]]
 
+-- disble netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 

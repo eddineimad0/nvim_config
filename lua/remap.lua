@@ -26,9 +26,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 local opt = {silent = false, noremap = true}
 
--- Shortcut for Netrw
-vim.keymap.set("n", "<leader>pv", "<cmd>Ex<CR>",{silent = true, noremap = true})
-
 -- Alternative to Alt-Up and Alt-Down in vscode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv",{silent = true, noremap = true})
 vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv",{silent = true, noremap = true})
@@ -42,6 +39,9 @@ vim.keymap.set("n", ";Q", ":q!<CR>",{silent = true, noremap = true})
 
 -- Remap CTRL-c to <esc>
 vim.keymap.set({"n","i","v","o"}, "<C-c>","<esc>",opt)
+
+vim.keymap.set('n','[d',vim.diagnostic.goto_prev,opts)
+vim.keymap.set('n',']d',vim.diagnostic.goto_next,opts)
 
 -- Remap CTRL-{h,j,k,l} to arrows in insert mode
 vim.keymap.set("i","<C-h>","<Left>",opt)
