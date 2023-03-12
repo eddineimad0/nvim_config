@@ -22,6 +22,7 @@ require('packer').startup(function(use)
       'j-hui/fidget.nvim',
     },
   }
+
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
@@ -29,19 +30,22 @@ require('packer').startup(function(use)
     },
   }
 
-  use { -- Autocompletion
+  use {
+    -- Autocompletion
     'hrsh7th/nvim-cmp',
     requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
   }
 
-  use { -- Highlight, edit, and navigate code
+  use {
+    -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     run = function()
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
   }
 
-  use { -- Additional text objects via treesitter
+  use {
+    -- Additional text objects via treesitter
     'nvim-treesitter/nvim-treesitter-textobjects',
     after = 'nvim-treesitter',
   }
@@ -56,6 +60,10 @@ require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+
+  -- Text
+  use 'windwp/nvim-autopairs' -- A super powerful autopair plugin for Neovim that supports multiple characters.
+  use 'mg979/vim-visual-multi' -- Mutliple cursors plugin for vim/neovim.
 
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
