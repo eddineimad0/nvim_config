@@ -45,3 +45,9 @@ Requires [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) for
 [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice. 
 
 [nvim-telescope/telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) - FZF sorter for telescope written in c.
+
+[windwp/nvim-autopairs](https://github.com/windwp/nvim-autoparis) - A super powerful autopair plugin for Neovim that supports multiple characters.
+
+[mg979/vim-visual-multi](https://github.com/mg979/vim-visual-multi) - Mutliple cursors plugin for vim/neovim.
+
+
