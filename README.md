@@ -38,8 +38,6 @@ Requires [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) for
 
 [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim) - 🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more. 
 
-[tpope/vim-sleuth](https://github.com/tpope/vim-sleuth) - Heuristically set buffer options.
-
 [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - A highly extendable fuzzy finder over lists.
 
 [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice. 
@@ -47,7 +45,3 @@ Requires [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) for
 [nvim-telescope/telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) - FZF sorter for telescope written in c.
 
 [windwp/nvim-autopairs](https://github.com/windwp/nvim-autoparis) - A super powerful autopair plugin for Neovim that supports multiple characters.
-
-[mg979/vim-visual-multi](https://github.com/mg979/vim-visual-multi) - Mutliple cursors plugin for vim/neovim.
-
-

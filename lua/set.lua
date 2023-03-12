@@ -1,67 +1,59 @@
--- [[ Setting options ]]
--- See `:help vim.o`
+local opt = vim.opt
+local g = vim.g
 
 -- Set highlight on search
-vim.o.hlsearch = false
+opt.hlsearch = false
 
--- Make line numbers default
-vim.wo.number = true
+-- line numbers 
+opt.number = true
+opt.numberwidth = 2
+opt.ruler = false
+
+-- Indenting
+opt.expandtab = true
+opt.shiftwidth = 2
+opt.smartindent = true
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.breakindent = true
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
-
--- Enable break indent
-vim.o.breakindent = true
-
--- Save undo history
-vim.o.undofile = true
-
+opt.mouse = 'a'
 -- Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
+opt.ignorecase = true
+opt.smartcase = true
 
+opt.whichwrap:append "<>[]hl"
+opt.termguicolors = true
+
+opt.signcolumn = "yes"
+opt.splitbelow = true
+opt.splitright = true
+-- Save undo history
+opt.undofile = true
 -- Decrease update time
-vim.o.updatetime = 250
-vim.wo.signcolumn = 'yes'
-
-vim.o.termguicolors = true
--- Default options:
-require("gruvbox").setup({
-  undercurl = true,
-  underline = true,
-  bold = true,
-  italic = true,
-  strikethrough = true,
-  invert_selection = false,
-  invert_signs = false,
-  invert_tabline = false,
-  invert_intend_guides = false,
-  inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "", -- can be "hard", "soft" or empty string
-  palette_overrides = {},
-  overrides = {},
-  dim_inactive = false,
-  transparent_mode = false,
-})
--- Set colorscheme
-vim.cmd [[colorscheme gruvbox]]
-
--- disble netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+opt.updatetime = 250
+opt.timeoutlen = 400
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+opt.completeopt = 'menuone,noselect'
 
-vim.opt.scrolloff = 8
+opt.scrolloff = 8
 
-vim.opt.relativenumber = true
-vim.opt.autoread = true
+opt.relativenumber = true
+opt.autoread = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+-- disble netrw
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 
-vim.opt.smartindent = true
-vim.opt.autoindent = true
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
