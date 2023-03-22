@@ -4,7 +4,11 @@ require("gruvbox").setup({
   undercurl = true,
   underline = true,
   bold = true,
-  italic = true,
+  italic = {
+    strings = true,
+    comments = true,
+    operators = true,
+  },
   strikethrough = true,
   invert_selection = false,
   invert_signs = false,
