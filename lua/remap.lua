@@ -12,24 +12,39 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', '<Up>', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, noremap = true })
 vim.keymap.set('n', '<Down>', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, noremap = true })
 
--- Switch between windows.
+-- Fast save, quit and force quit.
+vim.keymap.set("n", "<leader>w", "<CMD>update<CR>",opt)
+vim.keymap.set("n", "<leader>q", "<CMD>q<CR>",opt)
+
+-- Copy all.
+vim.keymap.set("n", "<C-a>", "<CMD> %y+ <CR>",opt)
+
+-- Buffer.
+vim.keymap.set("n", "<leader>nb", "<CMD> enew <CR>",opt)
+vim.keymap.set("n","<TAB>","<CMD>bnext<CR>",opt)
+vim.keymap.set("n","<S-TAB>","<CMD>bprevious<CR>",opt)
+
+-- Windows.
+vim.keymap.set("n", ";b", "<CMD>enew<CR>",opt)
+vim.keymap.set("n", ";h", "<CMD>split<CR>",opt)
+vim.keymap.set("n", ";v", "<CMD>vsplit<CR>",opt)
+
+-- Windows Navigation.
 vim.keymap.set('n',"<C-h>", '<C-w>h',opt)
 vim.keymap.set('n',"<C-l>", '<C-w>l',opt)
 vim.keymap.set('n',"<C-j>", '<C-w>j',opt)
 vim.keymap.set('n',"<C-k>", '<C-w>k',opt)
 
--- Fast search.
-vim.keymap.set("n", ";s", "/",opt)
--- Fast save, quit and force quit.
-vim.keymap.set("n", ";w", ":w<CR>",opt)
-vim.keymap.set("n", ";q", ":wq<CR>",opt)
-vim.keymap.set("n", ";Q", ":q!<CR>",opt)
+-- Windows Resize.
+vim.keymap.set("n", "<C-Left>", "<C-w><",opt)
+vim.keymap.set("n", "<C-Right>", "<C-w>>",opt)
+vim.keymap.set("n", "<C-Up>", "<C-w>+",opt)
+vim.keymap.set("n", "<C-Down>", "<C-w>-",opt)
 
--- Copy all.
-vim.keymap.set("n", "<C-a>", "<cmd> %y+ <CR>",opt)
+-- Terminal
+vim.keymap.set("n", "<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>",opt)
+vim.keymap.set("n", "<leader>tv", "<CMD>ToggleTerm size=80 direction=vertical<CR>",opt)
 
--- New Buffer.
-vim.keymap.set("n", "<leader>b", "<cmd> enew <CR>",opt)
 
 vim.keymap.set('n','[d',vim.diagnostic.goto_prev,opts)
 vim.keymap.set('n',']d',vim.diagnostic.goto_next,opts)

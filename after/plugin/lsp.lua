@@ -25,13 +25,12 @@ local on_attach = function(_, bufnr)
     nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
     nmap('<leader>ls', vim.lsp.buf.signature_help, '[L]ist [S]ignature')
     nmap('<leader>f', vim.diagnostic.open_float, '[F]loating Diagnostic')
-  
+    nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
     -- See `:help K` for why this keymap
     nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
     nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
   
     -- Lesser used LSP functionality
-    nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
     -- Auto Format on save
     vim.api.nvim_create_autocmd('BufWritePre',{
