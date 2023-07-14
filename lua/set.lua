@@ -1,12 +1,14 @@
 local opt = vim.opt
 local g = vim.g
 
--- Set highlight on search
+-- No highlight on search
 opt.hlsearch = false
+opt.incsearch = true
 
 -- line numbers 
 opt.number = true
 opt.numberwidth = 2
+opt.relativenumber = true
 
 -- Indenting
 opt.expandtab = true
@@ -39,7 +41,6 @@ opt.completeopt = 'menuone,noselect'
 
 opt.scrolloff = 8
 
-opt.relativenumber = true
 opt.autoread = true
 
 -- disble netrw
