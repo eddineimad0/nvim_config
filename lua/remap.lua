@@ -13,7 +13,7 @@ vim.keymap.set('n', '<Up>', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent =
 vim.keymap.set('n', '<Down>', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, noremap = true })
 
 -- Copy all.
-vim.keymap.set("n", "<C-a>", "<CMD> %y+ <CR>",opt)
+vim.keymap.set("n", "ya", "<CMD> %y+ <CR>",opt)
 
 -- Buffer.
 vim.keymap.set("n", "<leader>nb", "<CMD> enew <CR>",opt)
@@ -31,14 +31,15 @@ vim.keymap.set('n',"<C-j>", '<C-w>j',opt)
 vim.keymap.set('n',"<C-k>", '<C-w>k',opt)
 
 -- Windows Resize.
-vim.keymap.set("n", "<C-Left>", "<C-w><",opt)
-vim.keymap.set("n", "<C-Right>", "<C-w>>",opt)
+vim.keymap.set("n", "<C-Left>", "<C-w>>",opt)
+vim.keymap.set("n", "<C-Right>", "<C-w><",opt)
 vim.keymap.set("n", "<C-Up>", "<C-w>+",opt)
 vim.keymap.set("n", "<C-Down>", "<C-w>-",opt)
 
 -- Terminal
 vim.keymap.set("n", "<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>",opt)
 vim.keymap.set("n", "<leader>t", "<CMD>ToggleTerm<CR>",opt)
+vim.keymap.set("t","<esc>","<CMD>ToggleTerm<CR>",opt)
 
 -- Diagnostics
 vim.keymap.set('n','[d',vim.diagnostic.goto_prev,opts)
@@ -61,6 +62,7 @@ vim.keymap.set("i","<C-b>","<ESC>^i",opt)
 vim.keymap.set("i","<C-e>","<End>",opt)
 
 --------------- Visual Mode ---------------------------
+
 -- Alternative to Alt-Up and Alt-Down in vscode.
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv",opt)
 vim.keymap.set("v", "<A-k>", ":m '>-2<CR>gv=gv",opt)
