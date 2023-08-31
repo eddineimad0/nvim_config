@@ -1,4 +1,3 @@
-require("remap")
-require("plugins")
-require("set")
-
+vim.g.mapleader = " " -- Space is our leader
+require("plugin")
+require("config")
