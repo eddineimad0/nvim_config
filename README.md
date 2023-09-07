@@ -43,3 +43,5 @@ Requires [Neovim](https://neovim.io/) (>=0.9.1).
 [echasnovski/mini.comment](https://github.com/echasnovski/mini.comment) - Neovim Lua plugin for fast and familiar per-line commenting. Part of 'mini.nvim' library.
 
 [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) - autopairs for neovim written by lua.
+
+[folke/lazy.nvim](https:/github.com/folke/lazy.nvim) - 💤 A modern plugin manager for Neovim 
