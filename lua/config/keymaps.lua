@@ -31,8 +31,6 @@ map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 -- buffers
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
-map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
@@ -47,7 +45,7 @@ map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result
 
 -- Copy all.
 map("n", "ya", "<CMD> %y+ <CR>",{ desc = "Copy All buffer" })
-
+map('x', 'p', 'p:let @+=@0<CR>:let @"=@0<CR>',{ silent = true, noremap = true })
 -- save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
@@ -78,3 +76,9 @@ map("i","<C-e>","<End>",{ desc = "Goto line end", noremap = true })
 
 -- Keymaps for better default experience
 map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true, noremap = true })
+
+-- Remap CTRL-{h,j,k,l} to arrows in insert mode for better navigation.
+map("i","<C-h>","<Left>",{ silent = true, noremap = true, desc="Move cursor left." })
+map("i","<C-j>","<Down>",{ silent = true, noremap = true, desc="Move cursor down." })
+map("i","<C-k>","<Up>",{ silent = true, noremap = true, desc="Move cursor up." })
+map("i","<C-l>","<Right>",{ silent = true, noremap = true, desc="Move cursor right." })

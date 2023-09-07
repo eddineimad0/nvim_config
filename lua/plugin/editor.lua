@@ -4,6 +4,7 @@ return {
   -- file explorer
   {
     "nvim-tree/nvim-tree.lua",
+    lazy=false,
     opts={
         sort_by = "case_sensitive",
         actions = {
@@ -182,4 +183,27 @@ return {
       end,
     },
   },
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    opts = {
+      size = 15,
+      open_mapping = [[<C-\>]],
+      shading_factor = 2,
+      direction = "float",
+      float_opts = {
+        border = "curved",
+        highlights = {
+          border = "Normal",
+          background = "Normal",
+        },
+      },
+    },
+    keys={
+      -- Terminal
+      {"<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>",desc = "Open horizontal terminal",remap=true},
+      {"<leader>t", "<CMD>ToggleTerm<CR>",desc = "Open Terminal" remap=true},
+      {"<esc>","<CMD>ToggleTerm<CR>",mode="t",desc = "close Terminal" remap=true},
+    },
+  }
 }
