@@ -32,4 +32,14 @@ Requires [Neovim](https://neovim.io/) (>=0.9.1).
 
 [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice. 
 
-...
+[rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify) - A fancy, configurable, notification manager for NeoVim.
+
+[SmiteshP/nvim-navic](https://github.com/SmiteshP/nvim-navic) - Simple winbar/statusline plugin that shows your current code context.
+
+[akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) - A neovim lua plugin to help easily manage multiple terminal windows.
+
+[nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) - A file explorer tree for neovim written in lua.
+
+[echasnovski/mini.comment](https://github.com/echasnovski/mini.comment) - Neovim Lua plugin for fast and familiar per-line commenting. Part of 'mini.nvim' library.
+
+[windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) - autopairs for neovim written by lua.
