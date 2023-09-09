@@ -44,4 +44,6 @@ Requires [Neovim](https://neovim.io/) (>=0.9.1).
 
 [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) - autopairs for neovim written by lua.
 
-[folke/lazy.nvim](https:/github.com/folke/lazy.nvim) - 💤 A modern plugin manager for Neovim 
+[folke/lazy.nvim](https:/github.com/folke/lazy.nvim) - 💤 A modern plugin manager for Neovim.
+
+[folke/todo-comments](https://github.com/folke/todo-comments.nvim) - ✅ Highlight, list and search todo comments in your projects.

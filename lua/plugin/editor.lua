@@ -205,5 +205,18 @@ return {
       {"<leader>t", "<CMD>ToggleTerm<CR>", desc = "Open terminal", remap=true},
       {"<esc>","<CMD>ToggleTerm<CR>", mode="t", desc = "Close terminal", remap=true},
     },
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = {"TodoTrouble","TodoTelescope"},
+    event = { "BufReadPost", "BufNewFile" },
+    config = true,
+    keys = {
+      { "]t", function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
+      { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous todo comment" },
+      { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
+      { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
+    },
   }
 }
