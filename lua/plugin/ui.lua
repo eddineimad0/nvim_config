@@ -69,6 +69,7 @@ return {
 
     {
       "lukas-reineke/indent-blankline.nvim",
+      version = "2.20.7",
       event = { "BufReadPost", "BufNewFile" },
       opts = {
         char = "┊",
@@ -86,9 +87,6 @@ return {
         },
         show_trailing_blankline_indent = false,
         show_current_context = true,
-        char_highlight_list={
-          "GruvboxGray",
-        }
       },
     },
   
