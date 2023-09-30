@@ -27,6 +27,7 @@ opt.ignorecase = true -- Ignore case
 opt.smartcase = true -- Don't ignore case with capitals
 opt.whichwrap:append "<>[]hl"
 opt.scrolloff = 8 -- Lines of context
+opt.sidescrolloff = 8 -- Horizontal Lines of context
 
 -- Window splits
 opt.splitbelow = true -- Put new windows below current
