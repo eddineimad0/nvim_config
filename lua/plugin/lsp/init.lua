@@ -50,7 +50,21 @@ return {
           lua_ls = {},
           zls = {},
           rust_analyzer={},
-          clangd={},
+          clangd={
+            cmd = {
+              "clangd",
+              "--background-index",
+              "--pch-storage=memory",
+              "--all-scopes-completion",
+              "--pretty",
+              "--header-insertion=never",
+              "-j=4",
+              "--inlay-hints",
+              "--header-insertion-decorators",
+              "--function-arg-placeholders",
+              "--completion-style=detailed"
+            },
+          },
         },
         -- add any global capabilities here
         capabilities = {},
