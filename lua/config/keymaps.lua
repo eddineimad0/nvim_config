@@ -62,8 +62,8 @@ map("n", "<leader>nf", "<cmd>enew<cr>", { desc = "New File" })
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 
 -- windows
-map("n", "<leader>wh", "<CMD>split<CR>",{ desc = "Split window below", noremap = true })
-map("n", "<leader>wv", "<CMD>vsplit<CR>",{ desc = "Split window right", noremap = true })
+map("n", "<leader>wW", "<CMD>split<CR>",{ desc = "Split window below", noremap = true })
+map("n", "<leader>ww", "<CMD>vsplit<CR>",{ desc = "Split window right", noremap = true })
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete window", noremap = true })
 
 -- No weired jumps when searching.
