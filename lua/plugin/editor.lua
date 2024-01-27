@@ -4,6 +4,7 @@ return {
   -- file explorer
   {
     "nvim-tree/nvim-tree.lua",
+    lazy=false,
     opts={
         sort_by = "case_sensitive",
         actions = {
@@ -183,4 +184,40 @@ return {
       end,
     },
   },
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    opts = {
+      size = 15,
+      open_mapping = [[<C-\>]],
+      shading_factor = 2,
+      direction = "float",
+      float_opts = {
+        border = "curved",
+        highlights = {
+          border = "Normal",
+          background = "Normal",
+        },
+      },
+    },
+    keys={
+      -- Terminal
+      {"<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>",desc = "Open horizontal terminal",remap=true},
+      {"<leader>t", "<CMD>ToggleTerm<CR>", desc = "Open terminal", remap=true},
+      {"<esc>","<CMD>ToggleTerm<CR>", mode="t", desc = "Close terminal", remap=true},
+    },
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = {"TodoTrouble","TodoTelescope"},
+    event = { "BufReadPost", "BufNewFile" },
+    config = true,
+    keys = {
+      { "]t", function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
+      { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous todo comment" },
+      { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
+      { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
+    },
+  }
 }

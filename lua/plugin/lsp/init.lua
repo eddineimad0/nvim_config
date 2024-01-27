@@ -32,8 +32,6 @@ return {
         inlay_hints = {
           enabled = false,
         },
-        -- add any global capabilities here
-        capabilities = {},
         -- Automatically format on save
         autoformat = true,
         -- Enable this to show formatters used in a notification
@@ -52,7 +50,32 @@ return {
           lua_ls = {},
           zls = {},
           rust_analyzer={},
-          clangd={},
+          clangd={
+            cmd = {
+              "clangd",
+              "--background-index",
+              "--pch-storage=memory",
+              "--all-scopes-completion",
+              "--pretty",
+              "--header-insertion=never",
+              "-j=4",
+              "--inlay-hints",
+              "--header-insertion-decorators",
+              "--function-arg-placeholders",
+              "--completion-style=detailed"
+            },
+          },
+        },
+        -- add any global capabilities here
+        capabilities = {},
+        setup = {
+            -- example to setup with typescript.nvim
+            -- tsserver = function(_, opts)
+            --   require("typescript").setup({ server = opts })
+            --   return true
+            -- end,
+            -- Specify * to use this function as a fallback for any server
+            -- ["*"] = function(server, opts) end,
         },
       },
       config = function(_, opts)
@@ -124,15 +147,15 @@ return {
             capabilities = vim.deepcopy(capabilities),
           }, servers[server] or {})
   
-          -- if opts.setup[server] then
-          --   if opts.setup[server](server, server_opts) then
-          --     return
-          --   end
-          -- elseif opts.setup["*"] then
-          --   if opts.setup["*"](server, server_opts) then
-          --     return
-          --   end
-          -- end
+          if opts.setup[server] then
+            if opts.setup[server](server, server_opts) then
+              return
+            end
+          elseif opts.setup["*"] then
+            if opts.setup["*"](server, server_opts) then
+              return
+            end
+          end
           require("lspconfig")[server].setup(server_opts)
         end
   

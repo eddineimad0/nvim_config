@@ -20,6 +20,14 @@ return {
           return math.floor(vim.o.columns * 0.75)
         end,
       },
+      init = function()
+        vim.api.nvim_create_autocmd("User", {
+          pattern = "VeryLazy",
+          callback = function()
+            vim.notify = require("notify")
+          end,
+        })
+      end,
     },
   
     -- lualine
@@ -61,6 +69,7 @@ return {
 
     {
       "lukas-reineke/indent-blankline.nvim",
+      version = "2.20.7",
       event = { "BufReadPost", "BufNewFile" },
       opts = {
         char = "┊",
@@ -78,9 +87,6 @@ return {
         },
         show_trailing_blankline_indent = false,
         show_current_context = true,
-        char_highlight_list={
-          "GruvboxGray",
-        }
       },
     },
   

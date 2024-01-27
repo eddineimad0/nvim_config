@@ -41,6 +41,7 @@ return {
         "markdown",
         "markdown_inline",
         "python",
+        "go",
       },
       incremental_selection = {
         enable = true,

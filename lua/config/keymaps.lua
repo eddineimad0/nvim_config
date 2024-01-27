@@ -14,11 +14,11 @@ map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", noremap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", noremap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", noremap = true })
 
--- Resize window using <ctrl> arrow keys
-map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+-- Resize window using <ctrl><shift> arrow keys
+map("n", "<A-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+map("n", "<A-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+map("n", "<A-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+map("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- Move Lines
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
@@ -31,8 +31,6 @@ map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 -- buffers
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
-map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
@@ -47,7 +45,7 @@ map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result
 
 -- Copy all.
 map("n", "ya", "<CMD> %y+ <CR>",{ desc = "Copy All buffer" })
-
+map('x', 'p', 'p:let @+=@0<CR>:let @"=@0<CR>',{ silent = true, noremap = true })
 -- save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
@@ -79,14 +77,8 @@ map("i","<C-e>","<End>",{ desc = "Goto line end", noremap = true })
 -- Keymaps for better default experience
 map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true, noremap = true })
 
--- toggle options
--- map("n", "<leader>uf", require("lazyvim.plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
--- map("n", "<leader>us", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
--- map("n", "<leader>uw", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
--- map("n", "<leader>ul", function() Util.toggle_number() end, { desc = "Toggle Line Numbers" })
--- map("n", "<leader>ud", Util.toggle_diagnostics, { desc = "Toggle Diagnostics" })
--- local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
--- map("n", "<leader>uc", function() Util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
--- if vim.lsp.inlay_hint then
---   map("n", "<leader>uh", function() vim.lsp.inlay_hint(0, nil) end, { desc = "Toggle Inlay Hints" })
--- end
+-- Remap CTRL-{h,j,k,l} to arrows in insert mode for better navigation.
+map("i","<C-h>","<Left>",{ silent = true, noremap = true, desc="Move cursor left." })
+map("i","<C-j>","<Down>",{ silent = true, noremap = true, desc="Move cursor down." })
+map("i","<C-k>","<Up>",{ silent = true, noremap = true, desc="Move cursor up." })
+map("i","<C-l>","<Right>",{ silent = true, noremap = true, desc="Move cursor right." })

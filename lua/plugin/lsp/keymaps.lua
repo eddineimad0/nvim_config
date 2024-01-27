@@ -26,7 +26,6 @@ function KeyMap.get()
       { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "Goto T[y]pe Definition" },
       { "K", vim.lsp.buf.hover, desc = "Hover Documentation" },
       { "gK", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" },
-      { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" },
       { "]d", KeyMap.diagnostic_goto(true), desc = "Next Diagnostic" },
       { "[d", KeyMap.diagnostic_goto(false), desc = "Prev Diagnostic" },
       { "]e", KeyMap.diagnostic_goto(true, "ERROR"), desc = "Next Error" },
