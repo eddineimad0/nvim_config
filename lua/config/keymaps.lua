@@ -46,6 +46,7 @@ map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result
 -- Copy all.
 map("n", "ya", "<CMD> %y+ <CR>",{ desc = "Copy All buffer" })
 map('x', 'p', 'p:let @+=@0<CR>:let @"=@0<CR>',{ silent = true, noremap = true })
+
 -- save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 

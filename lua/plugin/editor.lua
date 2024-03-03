@@ -55,17 +55,17 @@ return {
     keys = {
       { "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
       -- find
-      { "<leader>fb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Find Open Buffers" },
-      { "<leader>ff", Util.telescope("files"), desc = "Find Files (root dir)" },
-      { "<leader>fr", "<cmd>Telescope resume<cr>", desc = "Resume" },
-      { "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
-      { "<leader>fD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
-      { "<leader>fg", Util.telescope("live_grep"), desc = "Grep (root dir)" },
-      { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
-      { "<leader>fw", Util.telescope("grep_string", { word_match = "-w" }), desc = "Word (root dir)" },
-      { "<leader>fw", Util.telescope("grep_string"), mode = "v", desc = "Selection (root dir)" },
+      { "<leader>sb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Search Open Buffers" },
+      { "<leader>sf", Util.telescope("files"), desc = "Search for Files (root dir)" },
+      { "<leader>sc", "<cmd>Telescope continue<cr>", desc = "Search Continue" },
+      { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Search Document diagnostics" },
+      { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Search Workspace diagnostics" },
+      { "<leader>sg", Util.telescope("live_grep"), desc = "Grep Search (root dir)" },
+      { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Search Key Maps" },
+      { "<leader>sw", Util.telescope("grep_string", { word_match = "-w" }), desc = "Search Word (root dir)" },
+      { "<leader>sW", Util.telescope("grep_string"), mode = "v", desc = "Search Selection (root dir)" },
       {
-        "<leader>fl",
+        "<leader>gs",
         Util.telescope("lsp_document_symbols", {
           symbols = {
             "Class",
@@ -83,7 +83,7 @@ return {
         desc = "Goto Symbol",
       },
       {
-        "<leader>fS",
+        "<leader>gS",
         Util.telescope("lsp_dynamic_workspace_symbols", {
           symbols = {
             "Class",

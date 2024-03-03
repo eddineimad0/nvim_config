@@ -3,6 +3,8 @@ local opt = vim.opt
 -- Misc
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
 opt.mouse = "a" -- Enable mouse mode
+-- Show which line your cursor is on
+opt.cursorline = true
 opt.conceallevel = 3 -- Hide * markup for bold and italic
 opt.spelllang = { "en" }
 opt.formatoptions = "jcroqlnt" -- tcqj
@@ -21,12 +23,14 @@ opt.smartindent = true -- Insert indents automatically
 opt.expandtab = true -- Use spaces instead of tabs
 opt.softtabstop = 4
 opt.breakindent = true
+opt.list = true
+opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Case insensitive searching UNLESS /C or capital in search
 opt.ignorecase = true -- Ignore case
 opt.smartcase = true -- Don't ignore case with capitals
 opt.whichwrap:append "<>[]hl"
-opt.scrolloff = 8 -- Lines of context
+opt.scrolloff = 10 -- Lines of context
 opt.sidescrolloff = 8 -- Horizontal Lines of context
 
 -- Window splits
@@ -36,7 +40,7 @@ opt.splitkeep = "screen"
 opt.winminwidth = 5 -- Minimum window width
 
 -- History
-opt.timeoutlen = 400
+opt.timeoutlen = 300
 opt.undofile = true
 opt.undolevels = 10000
 opt.updatetime = 250 -- Save swap file and trigger CursorHold
