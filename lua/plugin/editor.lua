@@ -57,7 +57,7 @@ return {
       -- find
       { "<leader>sb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Search Open Buffers" },
       { "<leader>sf", Util.telescope("files"), desc = "Search for Files (root dir)" },
-      { "<leader>sc", "<cmd>Telescope continue<cr>", desc = "Search Continue" },
+      { "<leader>sc", "<cmd>Telescope resume<cr>", desc = "Search Continue" },
       { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Search Document diagnostics" },
       { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Search Workspace diagnostics" },
       { "<leader>sg", Util.telescope("live_grep"), desc = "Grep Search (root dir)" },
