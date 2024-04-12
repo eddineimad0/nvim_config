@@ -15,6 +15,7 @@ opt.grepprg = "rg --vimgrep"
 opt.number = true -- Print line number
 opt.relativenumber = true -- Relative line numbers
 opt.numberwidth = 2
+opt.colorcolumn = "80"
 
 -- Indenting
 opt.shiftround = true -- Round indent
