@@ -198,11 +198,12 @@ return {
           background = "Normal",
         },
       },
+      shell = vim.o.shell,
     },
     keys={
       -- Terminal
-      {"<leader>th", "<CMD>ToggleTerm size=10 direction=horizontal<CR>",desc = "Open horizontal terminal",remap=true},
-      {"<leader>t", "<CMD>ToggleTerm<CR>", desc = "Open terminal", remap=true},
+      {"<leader>th", "<CMD>ToggleTerm size=16 direction=horizontal<CR>",desc = "Open horizontal terminal",remap=true},
+      {"<leader>tt", "<CMD>ToggleTerm size=40 direction=vertical<CR>", desc = "Open vertical terminal", remap=true},
       {"<esc>","<CMD>ToggleTerm<CR>", mode="t", desc = "Close terminal", remap=true},
     },
   },
@@ -218,5 +219,5 @@ return {
       { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
       { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
     },
-  }
+  },
 }

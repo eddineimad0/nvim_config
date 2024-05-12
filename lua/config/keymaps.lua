@@ -83,3 +83,10 @@ map("i","<C-h>","<Left>",{ silent = true, noremap = true, desc="Move cursor left
 map("i","<C-j>","<Down>",{ silent = true, noremap = true, desc="Move cursor down." })
 map("i","<C-k>","<Up>",{ silent = true, noremap = true, desc="Move cursor up." })
 map("i","<C-l>","<Right>",{ silent = true, noremap = true, desc="Move cursor right." })
+
+-- Terminal contorls
+map("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to Left Window" })
+map("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to Lower Window" })
+map("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to Upper Window" })
+map("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to Right Window" })
+map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })

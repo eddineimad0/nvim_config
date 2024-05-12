@@ -46,7 +46,6 @@ return {
         },
         -- LSP Server Settings
         servers = {
-          jsonls = {},
           lua_ls = {},
           zls = {},
           rust_analyzer={},

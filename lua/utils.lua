@@ -83,4 +83,50 @@ function Utils.telescope(builtin, opts)
   end
 end
 
+function Utils.foldtext()
+    local ok = pcall(vim.treesitter.get_parser, vim.api.nvim_get_current_buf())
+    local ret = ok and vim.treesitter.foldtext and vim.treesitter.foldtext()
+    if not ret or type(ret) == "string" then
+    ret = { { vim.api.nvim_buf_get_lines(0, vim.v.lnum - 1, vim.v.lnum, false)[1], {} } }
+    end
+    table.insert(ret, { " " .. require("lazyvim.config").icons.misc.dots })
+    if not vim.treesitter.foldtext then
+        return table.concat(
+        vim.tbl_map(function(line)
+            return line[1]
+        end, ret),
+        " "
+    )
+  end
+  return ret
+end
+
+function Utils.setup_shell(shell) 
+  vim.o.shell = shell or vim.o.shell
+
+  -- Special handling for pwsh
+  if shell == "pwsh" or shell == "powershell" then
+    -- Check if 'pwsh' is executable and set the shell accordingly
+    if vim.fn.executable("pwsh") == 1 then
+      vim.o.shell = "pwsh"
+    elseif vim.fn.executable("powershell") == 1 then
+      vim.o.shell = "powershell"
+    else
+      -- return LazyVim.error("No powershell executable found")
+    end
+    -- Setting shell command flags
+    vim.o.shellcmdflag = "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues['Out-File:Encoding']='utf8';"
+
+    -- Setting shell redirection
+    vim.o.shellredir = '2>&1 | %{ "$_" } | Out-File %s; exit $LastExitCode'
+
+    -- Setting shell pipe
+    vim.o.shellpipe = '2>&1 | %{ "$_" } | Tee-Object %s; exit $LastExitCode'
+
+    -- Setting shell quote options
+    vim.o.shellquote = ""
+    vim.o.shellxquote = ""
+  end
+end
+
 return Utils
