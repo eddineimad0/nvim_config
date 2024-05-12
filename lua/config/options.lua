@@ -5,7 +5,7 @@ opt.clipboard = "unnamedplus" -- Sync with system clipboard
 opt.mouse = "a" -- Enable mouse mode
 -- Show which line your cursor is on
 opt.cursorline = true
-opt.conceallevel = 3 -- Hide * markup for bold and italic
+opt.conceallevel = 2 -- Hide * markup for bold and italic
 opt.spelllang = { "en" }
 opt.formatoptions = "jcroqlnt" -- tcqj
 opt.grepformat = "%f:%l:%c:%m"
@@ -48,6 +48,16 @@ opt.updatetime = 250 -- Save swap file and trigger CursorHold
 -- Completion
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.completeopt = "menu,menuone,noselect" -- Better completion experience
+opt.inccommand = "nosplit" --preview incremental substitute
+opt.wrap = false -- Disable line wrap
+opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
@@ -56,7 +66,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- UI
-opt.laststatus = 0
+opt.laststatus = 3
 opt.termguicolors = true -- True color support
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time

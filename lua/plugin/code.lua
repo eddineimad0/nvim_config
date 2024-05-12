@@ -27,7 +27,7 @@ return {
         { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
       },
     },
-  
+
     -- auto completion
     {
       "hrsh7th/nvim-cmp",
@@ -75,19 +75,19 @@ return {
         }
       end,
     },
-  
+
     -- auto pairs
     {
       "windwp/nvim-autopairs",
       event = "InsertEnter",
       opts = {},
     },
-  
+
     -- comments
     {
       "echasnovski/mini.comment",
       event = "VeryLazy",
       opts = {},
     },
-  
+
 }
