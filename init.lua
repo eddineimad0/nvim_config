@@ -65,8 +65,8 @@ opt.fillchars = {
   eob = " ",
 }
 
-if vim.fn.has("win32") then
-  require("utils").setup_shell("powershell")
+if vim.fn.has("win32") == 1 then
+    require("utils").setup_shell("powershell")
 end
 
 
