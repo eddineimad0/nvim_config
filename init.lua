@@ -87,7 +87,6 @@ vim.g.loaded_netrwPlugin = 1
 
 -- UI
 opt.laststatus = 3
-opt.termguicolors = true -- True color support
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 vim.o.background = "dark"

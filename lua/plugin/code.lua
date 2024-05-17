@@ -83,13 +83,6 @@ return {
       opts = {},
     },
 
-    -- comments
-    {
-      "echasnovski/mini.comment",
-      event = "VeryLazy",
-      opts = {},
-    },
-
    -- multi cursor
    {
     'mg979/vim-visual-multi',
