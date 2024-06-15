@@ -203,8 +203,8 @@ return {
     keys={
       -- Terminal
       {"<leader>th", "<CMD>ToggleTerm size=16 direction=horizontal<CR>",desc = "Open horizontal terminal",remap=true},
-      {"<leader>tt", "<CMD>ToggleTerm size=40 direction=vertical<CR>", desc = "Open vertical terminal", remap=true},
-      {"<esc>","<CMD>ToggleTerm<CR>", mode="t", desc = "Close terminal", remap=true},
+      {"<leader>tt", "<CMD>ToggleTerm size=70 direction=vertical<CR>", desc = "Open vertical terminal", remap=true},
+      {"<leader>tf", "<CMD>ToggleTerm size=80 <CR>", desc = "Open floating terminal", remap=true},
     },
   },
   {
