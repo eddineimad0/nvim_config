@@ -43,7 +43,7 @@ opt.scrolloff = 8
 
 opt.autoread = true
 
--- disble netrw
+-- disable netrw
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 

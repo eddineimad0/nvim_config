@@ -84,6 +84,8 @@ vim.g.markdown_recommended_style = 0
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+-- disable calls to zig fmt on save (very laggy).
+vim.g.zig_fmt_autosave = 0
 
 -- UI
 opt.laststatus = 3

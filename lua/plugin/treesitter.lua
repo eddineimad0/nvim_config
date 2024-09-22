@@ -36,7 +36,6 @@ return {
         "rust",
         "zig",
         "markdown",
-        "markdown_inline",
         "python",
         "go",
       },
