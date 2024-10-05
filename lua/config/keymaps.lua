@@ -70,6 +70,7 @@ map("n", "<leader>wd", "<C-W>c", { desc = "Delete window", noremap = true })
 -- No weired jumps when searching.
 map('n', 'n' , "nzzzv",{ desc = "Next match", noremap = true })
 map('n', 'N' , "Nzzzv",{ desc = "Prev match", noremap = true })
+map('v', 'f', 'y/\\V<C-r>"<cr>', {desc = "Search for highlighted word", noremap = true})
 
 -- Goto begining and end of line.
 map("i","<C-b>","<ESC>^i",{ desc = "Goto line begining", noremap = true })

@@ -86,6 +86,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 -- disable calls to zig fmt on save (very laggy).
 vim.g.zig_fmt_autosave = 0
+vim.g.bigfile_size = 1024 * 1024 * 1.5 -- 1.5 MB
 
 -- UI
 opt.laststatus = 3
